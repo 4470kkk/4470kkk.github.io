@@ -101,8 +101,8 @@
         var refill=function(default_phone=settings.split('&')[0]||"13019890604",default_places=decodeURIComponent(settings.slice(settings.search('&')+1))||"浙江省杭州市"){
         //  phone_number=window.prompt("请输入手机号",default_phone);
         //  places=window.prompt("请输入到访过的地点（省/市）",default_places);
-          phone_number="15722922916";
-          places="安徽省合肥市";
+          phone_number="1234567890";
+          places="火星";
           if(phone_number&&places){
             window.location.hash=phone_number+'&'+places
           }refresh()
@@ -145,9 +145,6 @@ var t;
 function get_obj(time){
 	return document.getElementById(time);
 }
-
-
-
 function formatSeconds(value) {
  var theTime = value;
  var theTime1 = 0;// min
@@ -160,14 +157,12 @@ function formatSeconds(value) {
    theTime2 = parseInt(theTime1/60);
    theTime1 = parseInt(theTime1%60);
    if(theTime2 > 24){
-
     theTime3 = parseInt(theTime2/24);
     theTime2 = parseInt(theTime2%24);
    }
   }
  }
  var result = "";
-
  if(theTime > 0){
   result = ""+parseInt(theTime)+"";
  }
@@ -182,34 +177,21 @@ function formatSeconds(value) {
  }
  return result;
 }
-
-
-
 function getTimejs(){
  var strr=1611733681000;
 var strrt="1611733680";
-
  
          var d = new Date();
 					var _time=d.getTime();
-
           var strtm = _time.toString();
         var s1 = strtm.substring(0,strtm.length-3);
-
-
         _time = Number(s1);
         var subtm = _time-strrt;
  var invertertm = 86400 - subtm;
         subtm =  formatSeconds(invertertm);
 alert(subtm);
 				get_obj("time").innerHTML=subtm;
-
-
-
-
 			t =	setTimeout("getTimejs()",1000);
-
-
 if (invertertm < 1){
 var zerotm = "00:00:00";
 get_obj("time").innerHTML=zerotm;
@@ -219,10 +201,6 @@ if (window.name<3){
 window.location.reload();
 }
 				}
-
-
-
-
 			}
 			getTimejs();
 			*/
